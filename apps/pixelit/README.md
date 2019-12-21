@@ -85,7 +85,8 @@ switch:
 
 ### usage
 
-create the templates according to the wiki of pixelit and add these two values:
+create the templates according to the [wiki](https://wiki.dietru.de/books/pixel-it/page/apiscreen) of pixelit and add these two values:
+
 ```json
     "repeat": 10,
     "lifetime": 15,
@@ -94,8 +95,8 @@ parameter | meaning
 ----------|----------
 repeat|how often will this screen be shown
 lifetime|how long is this screen visible
- 
-name the json-files according to your screen an put it in the defined path.
+
+Name the json-files according to your screen an put it in the defined path.
 
 #### To add a screen use the service:
 
@@ -141,6 +142,3 @@ Watch Out, the [Awtrix](https://blueforcer.de/awtrix-2-0/) Hardware uses pin D5 
 #### On screen names
 
 You may use screen-names multiple times but if you e.g. delete a screen e.g. "data" all screens of that name will be delete.
-
-
-

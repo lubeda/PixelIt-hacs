@@ -1,14 +1,15 @@
 ## App configuration
 
 ```yaml
-hacs:
-  module: hacs
-  class: Hacs
-  hacs_sensor: sensor.hacs
+pixelit:
+  module: pixelit
+  class: pixelIT
+  ip: 192.168.178.24
+  path: "/config/appdaemon/apps/pixelit/"
+  entitiy_id: sensor.pixelit
 ```
-
 key | optional | type | default | description
 -- | -- | -- | -- | --
-`module` | False | string | | The module name of the app.
-`class` | False | string | | The name of the Class.
-`hacs_sensor` | True | string | `sensor.hacs`| The entity_id of the HACS sensor.
+`ip` | False | string | | The ip of the pixel controller (ESP)
+`path` | False | string | | The path to the json templates
+`entity_id` | True | string | `sensor.pixelit`| The entity_id of the PicelIt sensor.

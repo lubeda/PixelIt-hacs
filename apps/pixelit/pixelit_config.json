@@ -1,0 +1,9 @@
+{
+    "matrixtBrightness": 20,
+  	"matrixType": 1,
+  	"ntpServer" : "de.pool.ntp.org",
+    "clockTimeZone" : 1,
+    "scrollTextDefaultDelay": 120,
+	  "bootScreenAktiv": false,
+    "mqttAktiv": false 
+}
