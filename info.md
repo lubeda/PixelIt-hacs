@@ -3,7 +3,7 @@
 ```yaml
 pixelit:
   module: pixelit
-  class: pixelIT
+  class: pixelIt
   ip: 192.168.178.24
   path: "/config/appdaemon/apps/pixelit/"
   entitiy_id: sensor.pixelit
