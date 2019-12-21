@@ -223,7 +223,14 @@ class pixelit(hass.Hass):
       if (self.playlist[nowPlay]["repeat"] > 0) and (self.playlist[nowPlay]["screen"] != "clock"):
         self.playlist[nowPlay]["repeat"] -= 1
       try:
-        status = self.set_state(self.args["entitiy_id"], state =len(self.playlist) , attributes = {"screen": self.playlist[nowPlay]["screen"]})
+        playlist = []
+        for a in self.playlist:
+          try: 
+            if self.debug: self.log("playlist "+ a["screen"])
+            playlist.append(a["screen"])
+          except:
+            pass
+        status = self.set_state(self.args["entitiy_id"], state =len(self.playlist) , attributes = {"screen": self.playlist[nowPlay]["screen"],"playlist":json.dumps(playlist)})
       except:
         status = None        
       self.display(self.playlist[nowPlay])
