@@ -135,7 +135,7 @@ switch to next screen. decreases the repeat counter of the actual screen!!
 
 #### Sound
 
-The new [Firmwate](https://www.bastelbunker.de/wp-content/uploads/PixelIt.zip) of pixelIt supports mp3 playback via a DFPlayer Module. If you use sound in your templates, the sound is only played once, directly when you add the template to the loop.
+The new [Firmware](https://www.bastelbunker.de/wp-content/uploads/PixelIt.zip) of pixelIt supports mp3 playback via a DFPlayer Module. If you use sound in your templates, the sound is only played once, directly when you add the template to the loop.
 Watch Out, the [Awtrix](https://blueforcer.de/awtrix-2-0/) Hardware uses pin D5 for RX to the DFMini, so they are not interchange able
 
 #### On screen names
