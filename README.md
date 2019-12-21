@@ -17,8 +17,8 @@ Install the class to  your appdaemon an configure it:
 ```yaml
 pixelit:
   module: pixelit
-  class: pixelIT
-  ip: 192.168.178.24
+  class: pixeliT
+  ip: 192.168.178.75
   path: "/config/appdaemon/apps/pixelit/"
   entitiy_id: sensor.pixelit
   debug: False

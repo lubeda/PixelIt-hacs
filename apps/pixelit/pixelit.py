@@ -2,7 +2,7 @@ import appdaemon.plugins.hass.hassapi as hass
 import requests
 import json
 
-class pixelIt(hass.Hass):
+class pixelit(hass.Hass):
 
   def load_template(self,name):
     try: 
