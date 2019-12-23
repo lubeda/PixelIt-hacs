@@ -1,24 +1,24 @@
 # appdaemon_pixelt
-There is a marvelous project [PixelIT](https://www.bastelbunker.de/pixel-it/) which is a 8x32bit RGB WLAN LED matrix to display text and graphics for around 50€. The screen is more or less dumb, you have to feed it with data by a server.
+There is a marvelous project [PixelIT](https://www.bastelbunker.de/pixel-it/) which is a DIY 8x32bit RGB WLAN LED matrix to display text and graphics for around 50€. The screen is more or less dumb, you have to feed it with data by a server.
 The original developer provides a node-red flow to do so. The hardware and firmware is original from this website.
 The wiki is in german, to download the firmware use this link [ESP8266-Firmware](https://www.bastelbunker.de/wp-content/uploads/PixelIt.zip)
 
 ## Homeassistant
 I did not manage to feed data via node-red to the display so i started to develop an appdaemon class for this task. The result is in an early stage but is working. See a demo on [Youtube](https://youtu.be/CrZR8chQrP4).
 
-### concept
+### Concept
 
 The appdaemon shows a "screen" after another. A screen is assembled from a json [template](https://wiki.dietru.de/books/pixel-it/page/apiscreen) to set static information like colors and a "dynamic" part the message. E.g. you can design a template for temperature with a special icon or animation, text color and display duration (lifetime) and feed the actual temperature value via home-assistant. Screennames should be unique if you update data dynamicaly.
 
-### setup
+### Setup
 You need a running appdaemon, see e.g. [tutorial](https://webworxshop.com/getting-started-with-appdaemon-for-home-assistant/)
 Install the class to  your appdaemon an configure it:
 
 ```yaml
 pixelit:
   module: pixelit
-  class: pixeliT
-  ip: 192.168.178.75
+  class: pixelit
+  ip: 192.168.178.24
   path: "/config/appdaemon/apps/pixelit/"
   entitiy_id: sensor.pixelit
   debug: False
@@ -83,9 +83,10 @@ switch:
 ```
 **use your own homeassistant ip instead of 192...47!!!**
 
-### usage
+### Usage
 
-create the templates according to the wiki of pixelit and add these two values:
+Create the templates according to the [wiki](https://wiki.dietru.de/books/pixel-it/page/apiscreen) of pixelit and add these two values:
+
 ```json
     "repeat": 10,
     "lifetime": 15,
@@ -94,8 +95,14 @@ parameter | meaning
 ----------|----------
 repeat|how often will this screen be shown
 lifetime|how long is this screen visible
- 
-name the json-files according to your screen an put it in the defined path.
+
+Name the json-files according to your screen an put it in the defined path.
+
+#### Templates
+There are some samples in the templates subdirectory. Use them as stortingpoint for yoour own screens. You can test them in the browser in the test-area of your pixelit. 
+**Hint** Don't use `position` in the text-section, but set `"scrollText": "auto"` so text will be scrolled if to long to display at once.
+
+**Important** Take care of the syntax, the screens must be valid JSON!!
 
 #### To add a screen use the service:
 
@@ -136,11 +143,8 @@ switch to next screen. decreases the repeat counter of the actual screen!!
 #### Sound
 
 The new [Firmware](https://www.bastelbunker.de/wp-content/uploads/PixelIt.zip) of pixelIt supports mp3 playback via a DFPlayer Module. If you use sound in your templates, the sound is only played once, directly when you add the template to the loop.
-Watch Out, the [Awtrix](https://blueforcer.de/awtrix-2-0/) Hardware uses pin D5 for RX to the DFMini, so they are not interchange able
+Watch Out, the [Awtrix](https://blueforcer.de/awtrix-2-0/) Hardware uses pin D5 for RX to the DFMini, so they are not interchangeable
 
 #### On screen names
 
 You may use screen-names multiple times but if you e.g. delete a screen e.g. "data" all screens of that name will be delete.
-
-
-
