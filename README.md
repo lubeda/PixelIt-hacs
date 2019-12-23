@@ -115,7 +115,7 @@ message: "Door is open!"
 ```
 parameter | meaning
 ----------|----------
-title|selects the "*title*.json" template and equals the screen name
+title|selects the "*title*.json" template and uses it as the screen name
 message|the text to display
 target| (optional) "warning" and "alert" emphasises the message by repeating it more often
 
