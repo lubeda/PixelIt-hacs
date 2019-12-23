@@ -85,7 +85,7 @@ switch:
 
 ### usage
 
-create the templates according to the [wiki](https://wiki.dietru.de/books/pixel-it/page/apiscreen) of pixelit and add these two values:
+Create the templates according to the [wiki](https://wiki.dietru.de/books/pixel-it/page/apiscreen) of pixelit and add these two values:
 
 ```json
     "repeat": 10,
@@ -97,6 +97,12 @@ repeat|how often will this screen be shown
 lifetime|how long is this screen visible
 
 Name the json-files according to your screen an put it in the defined path.
+
+#### templates
+There are some samples in the templates subdirectory. Use them as stortingpoint for yoour own screens. You can test them in the browser in the test-area of your pixelit. 
+**Hint** Don't use `position` in the text-section, but set `"scrollText": "auto"` so text will be scrolled if to long to display at once.
+
+**Important** Take care of the syntax, the screens must be valid JSON!!
 
 #### To add a screen use the service:
 

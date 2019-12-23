@@ -14,13 +14,8 @@
     },
    "text":{ 
     "textString":"default",
-    "bigFont": false,
     "scrollText":"auto",
     "scrollTextDelay": 50,
-        "position":{
-            "x":8,
-            "y":1
-        },
         "color":{
             "r":160,
             "g":160,

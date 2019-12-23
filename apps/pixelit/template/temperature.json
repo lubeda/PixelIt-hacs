@@ -14,8 +14,6 @@
 	},
 	"text": {
 		"textString": "temp",
-		"bigFont": false,
-		"centerText": true,
 		"position": {
 			"x": 9,
 			"y": 1

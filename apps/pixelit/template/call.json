@@ -17,10 +17,6 @@
       "bigFont": true,
       "scrollText":"auto",
       "scrollTextDelay": 50,
-      "position":{
-          "x":8,
-          "y":1
-      },
       "color":{
           "r":255,
           "g":60,
