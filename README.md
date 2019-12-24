@@ -19,14 +19,14 @@ pixelit:
   module: pixelit
   class: pixelit
   ip: 192.168.178.24
-  path: "/config/appdaemon/apps/pixelit/"
+  path: "/config/pixelit/"
   entitiy_id: sensor.pixelit
   debug: False
 ```
 parameter | meaning
 ----------|----------
 ip|ip of the pixel controller
-path|path to the json templates
+path| the path to the json templates, this has to be outside of the appdaemon/apps/pixelit folder!!
 entity_id| entity in HA to update with information about the display
 
 #### Example Homeassistant config:
