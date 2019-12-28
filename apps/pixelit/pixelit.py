@@ -29,6 +29,7 @@ class pixelit(hass.Hass):
     if self.debug: self.log("pixelit_nextscreen: " +str(kwargs))
     self.cancel_timer(self.nextLoop)
     self.playlist_loop(self)
+    response = {"length playlist": len(self.playlist)}
     return response, 200
 
   def rest_add(self,kwargs):
